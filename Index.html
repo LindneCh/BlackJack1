@@ -1,79 +1,47 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Jack</title>
-    
-    <style>
-    body{background-color: green;
-    color: white;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    }
-    h1{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    h2{
-        font-family:monospace;
-        font-size: 2.5rem;
-    }
-    .button {
-       font-size: 1.3em;
-        width: 160px;
-        height: 30px;
-        color:khaki;
-        background-color: rgb(20, 162, 127);
-        text-align: center;
-        border-radius: 10px;
-
-    }
-    .ergebnis{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-            font-size: 30px;
-            line-height: 0.9;
-            justify-content: center;
-    }
-    .ergebnis2 {
-        font-size: 20px;
-        max-width: 345px;
-        max-height: 205px;
-    }
-    .game{
-        margin: 110px;
-        display: flex;
-        justify-content: center;
-
-    }
-    .scorelist {
-    float: right;
-    background-color: rgb(120, 176, 225);
-    color:darkblue;
-    font-size: 20px;
-    width: auto;
-    height: auto;
-    }
-
-</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack Spiel</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="game">
-<h1>Blackjack</h1>
-<h2>Card Values</h2>
-    <div class="container">
-        <div class="spiel">
-            <button class='button' onclick="game()">Spielen</button><br><br>
-            <div class="ergebnis" id="ergebnis"></div>
-            <div class="ergebnis" id="ergebnis2"></div>
-        </div>
-        <div class="scorelist">
-            <ul id="highScoreList"></ul>
-        </div>
+
+<body>
+<div class="schattenmitfarbverlauf" >
+  <div id="game-area">
+    
+    <div id="user-area">
+      <img id="user-bild" src="img/luke2.png" alt="Spieler">
+      <div id="user-cards"></div>
+      <p class="p2" id="user-points"></p>
     </div>
-<script src = "blackjack.js"></script>
+    <div class="message-area" id="message-area">
+      <div>User Score: <span id="ergebnis">0</span></div>
+      <p id="message"></p>
+    </div>
+    <div id="computer-area">
+      <img id="computer-bild" src="img/dv.png" alt="Computer">
+      <div id="computer-cards"></div>
+      <p class="p2" id="computer-points"></p>
+    </div>
+    
+  </div>
+</div>
+  <div id="button-area">
+    <button id="play-button">Spielen</button>
+    <button id="hit-button">Hit</button>
+    <button id="stand-button">Stand</button>
+    <button id="reset-button">Neue Runde</button>
+  </div>
+  <button  class="ecke" onclick="loeschen()">Verlauf löschen</button>
+
+  <div class = "spielverlauf" id="ergebnisse"></div>
+
+  <script src="blackjack.js"></script>
+
 </body>
+
 </html>
